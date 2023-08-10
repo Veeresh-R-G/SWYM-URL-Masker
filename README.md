@@ -19,3 +19,5 @@ Online tool for URL masking
   ![image](https://github.com/Veeresh-R-G/SWYM-URL-Masker/assets/72454785/a13107b3-56fe-4857-9c91-9df6908b9349)
 
   - You download the dashboard report in excel sheet format.
+
+Video Demo : [Click Here](https://drive.google.com/drive/folders/1z6Et1Aqj_3xDF8CBGzGH-N2XNoWy6A01?usp=sharing)
