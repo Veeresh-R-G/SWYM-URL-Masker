@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+</head>
+<body>
+    {% for item in link_mask %}
+        <div class="grid grid-cols-3">
+            <div>{{ link_mask[item][0] }}</div>
+            <a href="/masked_link/{{ item[23:] }}">{{item}}</a>
+           
+            <div>{{link_mask[item][1]}}</div>
+        </div>
+    {% endfor %}
+</body>
+</html>
