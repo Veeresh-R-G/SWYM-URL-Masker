@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    {% for item in link_mask %}
-        <div class="grid grid-cols-3">
-            <div>{{ link_mask[item][0] }}</div>
-            <a href="/masked_link/{{ item[23:] }}">{{item}}</a>
-           
-            <div>{{link_mask[item][1]}}</div>
+<body class="bg-gray-200/80 min-h-screen">
+    <div class="flex flex-col justify-center items-center">
+        <h3 class="text-4xl my-5 underline">Dashboard</h3>
+        <div>
+            <div class="grid grid-cols-3">
+                <div class="bg-blue-600/90 text-base text-white text-center py-1 rounded-tl-lg">Original Link</div>
+                <div class="bg-blue-600/90 text-base text-white text-center py-1 ">Masked Link</div>
+                <div class="bg-blue-600/90 text-base text-white text-center py-1 rounded-tr-lg">Clicks</div>
+            </div>
+            <div class="mb-6">
+                {% for item in link_mask %}
+                    <div class="grid grid-cols-3 text-center border-2">
+                        <div class="bg-white py-1 pl-1 border-r-2 border-l-2">{{ link_mask[item][0] }}</div>
+                        <a class="bg-white text-blue-800 underline py-1 border-r-2" href="/masked_link/{{ item[23:] }}">{{item}}</a>
+                    
+                        <div class="bg-white py-1 border-r-2">{{link_mask[item][1]}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Export As Pdf -->
+            
+            <a href="{{ url_for('export_to_excel') }}" class="px-2 mt-3 ml-1 rounded-lg py-1 bg-blue-500 text-white font-semibold">Download Excel</a>
+            <a href="/" class="px-2 mt-3 ml-1 rounded-lg py-1 bg-green-700 text-white font-semibold">Go Back</a>
         </div>
-    {% endfor %}
+    </div>
+
 </body>
 </html>
